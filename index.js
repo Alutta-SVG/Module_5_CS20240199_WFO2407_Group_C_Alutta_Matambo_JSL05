@@ -58,9 +58,10 @@ function generatePlaylist(guardians, songs) {
             const songItem = document.createElement('p');
 
             songItem.innerHTML =`<strong>${song.title}</strong> by ${song.artist}`;
-            
+
             guardianDiv. appendChild(songItem);
         }) 
+        container.appendChild(guardianDiv);
 }
     }        
 
