@@ -39,7 +39,7 @@ function generatePlaylist(guardians, songs) {
     container.innerHTML = '';
 
     for (const guardian in guardians) {
-        
+
         const preferredGenre = guardians[guardian];
 
 
@@ -52,6 +52,10 @@ function generatePlaylist(guardians, songs) {
         guardianDiv.classList.add('playlist');
 
         guardianDiv.innerHTML = `<h3>${guardian}'s Playlist (${preferredGenre})</h3>`;
+
+
+        playlist.forEach((song)=> {
+            const songItem = document.createElement('p');
 }
     }        
 
