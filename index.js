@@ -39,10 +39,19 @@ function generatePlaylist(guardians, songs) {
     container.innerHTML = '';
 
     for (const guardian in guardians) {
+        
         const preferredGenre = guardians[guardian];
+
+
         const playlist = songs.filter((song) => song.genre ===preferredGenre);
+
+
         const guardianDiv = document.createElement('div');
+
+
         guardianDiv.classList.add('playlist');
+
+        guardianDiv.innerHTML = `<h3>${guardian}'s Playlist (${preferredGenre})</h3>`;
 }
     }        
 
