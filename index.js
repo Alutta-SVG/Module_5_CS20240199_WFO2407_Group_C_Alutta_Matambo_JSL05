@@ -39,9 +39,10 @@ function generatePlaylist(guardians, songs) {
     container.innerHTML = '';
 
     for (const guardian in guardians) {
-        
-    }
+        const preferredGenre = guardians[guardian];
+        const playlist = songs.filter((song) => song.genre ===preferredGenre);
 }
+    }        
 
 // Call generatePlaylist and display the playlists for each Guardian
 generatePlaylist(guardians, songs);
