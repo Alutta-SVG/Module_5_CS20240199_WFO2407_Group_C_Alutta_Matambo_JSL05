@@ -33,39 +33,38 @@ const guardians = {
 // Function to generate playlist based on preferred genre
 function generatePlaylist(guardians, songs) {
     // Use the map() function to create playlists for each Guardian
-    // Your code here
+    // Your code here 
     const container = document.getElementById('playlists');
-    
-    //clear previous content 
+
+    //clear previous content
     container.innerHTML = '';
 
-   // Each Guardians preffered Genre 
-    for (const guardian in guardians) {
+    // Each Guardians preffered Genre
+    Object.entries(guardians).map(([guardian, preferredGenre]) => {
+     const playlist = songs.filter((song) => song.genre ===preferredGenre);
 
- // loop for each guardian 
-        const preferredGenre = guardians[guardian];
-
-        const playlist = songs.filter((song) => song.genre ===preferredGenre);
-
-      // Div for Guardians Playlist
+        // Div for Guardians Playlist
         const guardianDiv = document.createElement('div');
         guardianDiv.classList.add('playlist');
- 
-         // Playlist heading 
+
+        // Playlist heading
         guardianDiv.innerHTML = `<h3>${guardian}'s Playlist (${preferredGenre})</h3>`;
 
-       // songs on each guradians playlist
-        playlist.forEach((song)=> {
+        // songs on each guardian's playlist
+        playlist.map((song) => {
             const songItem = document.createElement('p');
 
-            songItem.innerHTML =`<strong>${song.title}</strong> by ${song.artist}`;
+            //<a> tag with href for each song title
+            songItem.innerHTML = `<a href="#" target="_blank"><strong>${song.title}</strong></a> by ${song.artist}`;
 
+            // Append the song item to the guardian's playlist div
             guardianDiv. appendChild(songItem);
-        }) 
+        })
+
         // Append the playlist div to the main container
         container.appendChild(guardianDiv);
+    });
 }
-    }        
 
 // Call generatePlaylist and display the playlists for each Guardian
 generatePlaylist(guardians, songs);
