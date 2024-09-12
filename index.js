@@ -56,6 +56,11 @@ function generatePlaylist(guardians, songs) {
 
         playlist.forEach((song)=> {
             const songItem = document.createElement('p');
+
+            songItem.innerHTML =`<strong>${song.title}</strong> by ${song.artist}`;
+            
+            guardianDiv. appendChild(songItem);
+        }) 
 }
     }        
 
