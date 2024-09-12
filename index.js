@@ -38,6 +38,9 @@ function generatePlaylist(guardians, songs) {
 
     container.innerHTML = '';
 
+    for (const guardian in guardians) {
+        
+    }
 }
 
 // Call generatePlaylist and display the playlists for each Guardian
